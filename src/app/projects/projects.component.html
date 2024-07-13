@@ -1,0 +1,36 @@
+<!-- Add a separator before the Projects section -->
+<div class="section-separator"></div>
+
+<div id="projects" class="container mt-5">
+  <div class="section-title">
+    <h2>Projects</h2>
+    <div class="title-underline"></div>
+  </div>
+  <div class="card-deck-wrapper">
+    <div class="arrow arrow-left" (click)="prevPage()">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="card-deck">
+      <div *ngFor="let project of paginatedProjects" class="card">
+        <img class="card-img-top" [src]="project.image" alt="Project Image">
+        <div class="card-body">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <p class="card-text">{{ project.description }}</p>
+          <button (click)="showProjectDetails(project)" class="btn btn-primary">
+            <i class="fa fa-info-circle"></i> View Details
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="arrow arrow-right" (click)="nextPage()">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Project Details Modal (if needed) -->
+<div id="projectModal" class="modal">
+  <div class="modal-content">
+    <!-- Modal content here -->
+  </div>
+</div>

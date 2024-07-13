@@ -1,0 +1,150 @@
+#about {
+  background-color: #dee2e6;
+  padding:  100px 0 0 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h1 {
+  font-size: 2.0rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: cursive;
+}
+
+.typing-animation {
+  border-right: 2px solid #333; /* Cursor styling */
+  white-space: normal; /* Allow text wrapping */
+  overflow: hidden; /* Hide overflow text */
+  width: 0; /* Start with zero width */
+  animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #333;
+  }
+}
+
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #555;
+}
+.profile-img {
+  max-width: 50%;
+  border-radius: 20% 5% 60% 5%;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+
+.profile-img:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  transform: scale(1.01); /* Adjust the scale factor as per your preference */
+}
+
+.get-in-touch-btn {
+  display: flex;
+  align-items: center;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem 1.3rem;
+  font-size: 1.0rem;
+  transition: all 0.3s ease;
+}
+
+.get-in-touch-btn i {
+  font-size: 1.5rem; /* Increase icon size */
+  margin-left: 1rem;
+}
+
+.get-in-touch-btn:hover {
+  background-color: #ffffff;
+  color: #333333;
+  transform: scale(1.03); /* Adjust the scale factor as per your preference */
+}
+.social-icons {
+  display: flex;
+  align-items: center;
+  margin-left: 1.5rem;
+
+}
+
+.social-icons .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 47px;
+  height: 47px;
+  border: 2px solid #007bff;
+  border-radius: 50%;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+
+}
+
+.social-icons .icon i {
+  color: #007bff;
+  font-size: 1.5rem;
+
+}
+
+.social-icons .icon:hover {
+  background-color: #007bff;
+}
+
+.social-icons .icon:hover i {
+  color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px){
+  #about {
+    padding: 1rem;
+  }
+
+  #about h1 {
+    font-size: 2rem;
+  }
+
+  #about p {
+    font-size: 1rem;
+  }
+
+  .typing-animation {
+    white-space: normal; /* Allow text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    width: 0; /* Start with zero width */
+    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
+  }
+  .get-in-touch-btn {
+    margin-top: 1rem;
+  }
+  .social-icons {
+    margin-top: 20px;
+    justify-content: center;
+  }
+  .social-icons .icon {
+    margin-right: 5px;
+  }
+}

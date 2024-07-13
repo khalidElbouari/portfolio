@@ -1,0 +1,67 @@
+/* src/app/header/header.component.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Adjust as needed */
+  background-color: #dee2e6; /* Background color of the navbar */
+  padding: 10px 20px; /* Padding around the navbar */
+  border-bottom: 1px solid #dee2e6; /* Border bottom for separation */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space between elements */
+  align-items: center; /* Align items vertically */
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Larger font size for brand */
+  color: #007bff; /* Blue color for brand */
+}
+.navbar-nav {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Align items vertically */
+}
+.nav-item {
+  margin: 0 10px; /* Margin around each navigation item */
+}
+
+.nav-link {
+  color: #343a40; /* Text color for nav links */
+  font-size: 1rem; /* Font size for nav links */
+  text-decoration: none; /* Remove default underline */
+  position: relative; /* Ensure relative positioning for pseudo-element */
+}
+
+
+.nav-link::before {
+  content: ''; /* Empty content for pseudo-element */
+  position: absolute; /* Absolute positioning */
+  bottom: -2px; /* Position just below the link text */
+  left: 0; /* Start from the left */
+  width: 100%; /* Full width */
+  height: 2px; /* Height of the underline */
+  background-color: #007bff; /* Blue color for underline */
+  transform: scaleX(0); /* Initial scale of zero */
+  transition: transform 0.3s ease-in-out; /* Smooth transition for underline */
+}
+
+.nav-link:hover::before {
+  transform: scaleX(1); /* Full scale (100%) on hover */
+}
+
+@media (max-width: 992px) {
+  .btn-primary {
+    border: 2px solid #007bff; /* Blue border */
+    color: #007bff; /* Blue text color */
+    background-color: transparent; /* Transparent background */
+    border-radius: 20px; /* Rounded corners */
+    padding: 10px 20px; /* Padding inside the button */
+    margin-top: 10px; /* Top margin */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Smooth transitions */
+  }
+
+  .btn-primary:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: #fff; /* White text color on hover */
+    border-color: #0056b3; /* Darker blue border color on hover */
+  }
+}

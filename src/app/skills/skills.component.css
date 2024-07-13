@@ -1,0 +1,47 @@
+/* Add margin-top to the container for spacing */
+.container.mt-5 {
+  margin-top: 5rem; /* Adjust as needed */
+}
+
+/* Adjust the styling for the title and description */
+h2.text-center {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p.text-center {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+/* Style the left section */
+.col-md-6.mb-4 {
+  padding-right: 2rem; /* Adjust padding for spacing */
+}
+
+h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+/* Style the accordion */
+.accordion-button {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
+
+.accordion-body {
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Additional spacing between sections */
+.row.mb-4 {
+  margin-bottom: 2rem; /* Adjust as needed */
+}
