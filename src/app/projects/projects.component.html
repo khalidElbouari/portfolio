@@ -12,10 +12,10 @@
     </div>
     <div class="card-deck">
       <div *ngFor="let project of paginatedProjects" class="card">
-        <img class="card-img-top" [src]="project.image" alt="Project Image">
+        <img class="card-img-top" [src]="project.image[0]" alt="Project Image">
         <div class="card-body">
           <h5 class="card-title">{{ project.title }}</h5>
-          <p class="card-text">{{ project.description }}</p>
+          <p class="card-text">de {{ project.debut }} a {{ project.fin}}</p>
           <button (click)="showProjectDetails(project)" class="btn btn-primary">
             <i class="fa fa-info-circle"></i> View Details
           </button>
@@ -28,9 +28,20 @@
   </div>
 </div>
 
-<!-- Project Details Modal (if needed) -->
+<!-- Project Details Modal -->
 <div id="projectModal" class="modal">
   <div class="modal-content">
-    <!-- Modal content here -->
+    <span class="close" (click)="closeModal()">&times;</span>
+    <div class="modal-body">
+      <div class="image-slider">
+        <img *ngFor="let img of currentProject?.image; let i = index" [src]="img" [class.active]="i === currentImageIndex" class="modal-image" alt="">
+        <button class="slider-arrow left" (click)="prevImage()">&#8249;</button>
+        <button class="slider-arrow right" (click)="nextImage()">&#8250;</button>
+      </div>
+      <div class="modal-description mt-4">
+        <h2>{{ currentProject?.title }}</h2>
+        <p>{{ currentProject?.description }}</p>
+      </div>
+    </div>
   </div>
 </div>
