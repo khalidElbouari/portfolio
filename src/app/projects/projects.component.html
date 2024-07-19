@@ -1,5 +1,4 @@
 <!-- Add a separator before the Projects section -->
-<div class="section-separator"></div>
 
 <div id="projects" class="container mt-5">
   <div class="section-title">
@@ -12,7 +11,7 @@
     </div>
     <div class="card-deck">
       <div *ngFor="let project of paginatedProjects" class="card">
-        <img class="card-img-top" [src]="project.image[0]" alt="Project Image">
+        <img class="card-img-top" [src]="project.images[0].src" alt="Project Image">
         <div class="card-body">
           <h5 class="card-title">{{ project.title }}</h5>
           <p class="card-text">de {{ project.debut }} a {{ project.fin}}</p>
@@ -32,15 +31,21 @@
 <div id="projectModal" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
+    <div class="modal-header">{{ currentProject?.title }}</div>
     <div class="modal-body">
       <div class="image-slider">
-        <img *ngFor="let img of currentProject?.image; let i = index" [src]="img" [class.active]="i === currentImageIndex" class="modal-image" alt="">
+        <img *ngFor="let img of currentProject?.images; let i = index" [src]="img.src" [class.active]="i === currentImageIndex" class="modal-image" alt="">
         <button class="slider-arrow left" (click)="prevImage()">&#8249;</button>
         <button class="slider-arrow right" (click)="nextImage()">&#8250;</button>
       </div>
+
       <div class="modal-description mt-4">
-        <h2>{{ currentProject?.title }}</h2>
         <p>{{ currentProject?.description }}</p>
+        <p><strong>Technologies:</strong>
+          <span *ngFor="let tech of currentProject?.technologies; let last = last">
+            {{ tech }}<span *ngIf="!last">, </span>
+          </span>
+        </p>
       </div>
     </div>
   </div>

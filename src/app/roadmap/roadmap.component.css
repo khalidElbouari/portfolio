@@ -1,0 +1,154 @@
+/* Container and title styling */
+.container.mt-5 {
+  margin-top: 5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #343a40;
+}
+
+/* Tabs styling */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  font-size: 1.2rem;
+  margin: 0 0.5rem; /* Adjusted for better spacing */
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border: 2px solid #007bff;
+  border-radius: 0.3rem;
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.tab.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Roadmap styling */
+.roadmap-container {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0; /* Adjust padding for spacing */
+}
+
+.roadmap-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #007bff;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+.roadmap {
+  position: relative;
+  padding: 2rem 0;
+}
+
+.roadmap-item {
+  position: relative;
+  width: 50%;
+  margin: 2rem 0;
+  padding-right: 2rem; /* Adjust padding to ensure space between item and line */
+  padding-left: 2rem; /* Adjust padding to ensure space between item and line */
+  display: flex;
+  justify-content: center;
+}
+
+.roadmap-item.left {
+  margin-left: 0;
+  text-align: right;
+}
+
+.roadmap-item.right {
+  margin-left: auto;
+  text-align: left;
+}
+
+.roadmap-item:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  left: -10px; /* Adjust if needed */
+}
+
+.roadmap-item.right:before {
+  left: auto;
+  right: -10px; /* Adjust if needed */
+}
+
+.roadmap-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+
+.roadmap-content h4 {
+  margin-top: 0;
+  color: #007bff;
+}
+
+.roadmap-content p {
+  margin: 0.5rem 0;
+  color: #6c757d;
+}
+
+.roadmap-content small {
+  display: block;
+  color: #999;
+}
+
+/* Hover effect for line showing year */
+.roadmap-line:hover::after {
+  content: attr(data-year);
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background: #007bff;
+  color: white;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.roadmap-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  background: #007bff;
+  color: white;
+  border-radius: 0.3rem;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}

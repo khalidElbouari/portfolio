@@ -14,46 +14,66 @@ export class ProjectsComponent {
         'Localisation de l\'Entreprise : Accès aux informations de localisation de l\'entreprise, y compris les adresses des succursales et des bureaux. L\'intégration de cartes interactives facilite cette fonctionnalité.\n' +
         '\n' +
         'Interactivité et Engagement : Une expérience interactive et engageante, permettant aux utilisateurs d\'interagir avec les contenus et de découvrir les services et les produits de manière immersive.  ',
-      image: ["/assets/myprojects/labocontrol-Aceuil.png",
-        "/assets/myprojects/labocontrol-materiel.png",
-        "/assets/myprojects/labocontrol-services.png"],
-      debut:'15/07/2023',
-      fin:'15/07/2023',
+      images: [
+        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
+        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
+        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
+      ],
+      debut: '15/07/2023',
+      fin: '15/07/2023',
+      technologies: ['Angular', 'TypeScript', 'Bootstrap']
     },
     {
       title: 'School management system',
       description: 'A brief description of Project 2.',
-      image: ["/assets/myprojects/labocontrol-Aceuil.png",
-        "/assets/myprojects/labocontrol-materiel.png",
-        "/assets/myprojects/labocontrol-services.png"],
-      debut:'15/07/2023',
-      fin:'15/07/2023',},
+      images: [
+        { src: "/assets/myprojects/pfe-BTS/img.png", description: "Accueil" },
+        { src: "/assets/myprojects/pfe-BTS/img_1.png", description: "Matériel" },
+        { src: "/assets/myprojects/pfe-BTS/img_2.png", description: "Services" },
+        { src: "/assets/myprojects/pfe-BTS/img_3.png", description: "Services" },
+        { src: "/assets/myprojects/pfe-BTS/img_4.png", description: "Services" },
+        { src: "/assets/myprojects/pfe-BTS/img_5.png", description: "Services" },
+      ],
+      debut: '15/07/2023',
+      fin: '15/07/2023',
+      technologies: ['Angular', 'TypeScript', 'Bootstrap']
+    },
     {
       title: 'Project 3',
       description: 'A brief description of Project 2.',
-      image: ["/assets/myprojects/labocontrol-Aceuil.png",
-        "/assets/myprojects/labocontrol-materiel.png",
-        "/assets/myprojects/labocontrol-services.png"] ,
-      debut:'15/07/2023',
-      fin:'15/07/2023',
+      images: [
+        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
+        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
+        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
+      ],
+      debut: '15/07/2023',
+      fin: '15/07/2023',
+      technologies: ['Angular', 'TypeScript', 'Bootstrap']
+
     },
     {
       title: 'Project 4',
       description: 'A brief description of Project 2.',
-      image: ["/assets/myprojects/labocontrol-Aceuil.png",
-        "/assets/myprojects/labocontrol-materiel.png",
-        "/assets/myprojects/labocontrol-services.png"],
-      debut:'15/07/2023',
-      fin:'15/07/2023',
+      images: [
+        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
+        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
+        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
+      ],
+      debut: '15/07/2023',
+      fin: '15/07/2023',
+      technologies: ['Angular', 'TypeScript', 'Bootstrap']
     },
     {
       title: 'Project 5',
       description: 'A brief description of Project 2.',
-      image: ["/assets/myprojects/labocontrol-Aceuil.png",
-        "/assets/myprojects/labocontrol-materiel.png",
-        "/assets/myprojects/labocontrol-services.png"],
-      debut:'15/07/2023',
-      fin:'15/07/2023',
+      images: [
+        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
+        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
+        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
+      ],
+      debut: '15/07/2023',
+      fin: '15/07/2023',
+      technologies: ['Angular', 'TypeScript', 'Bootstrap']
     },
 
   ];
@@ -99,12 +119,12 @@ export class ProjectsComponent {
     if (this.currentImageIndex > 0) {
       this.currentImageIndex--;
     } else {
-      this.currentImageIndex = this.currentProject.image.length - 1;
+      this.currentImageIndex = this.currentProject.images.length - 1;
     }
   }
 
   nextImage() {
-    if (this.currentImageIndex < this.currentProject.image.length - 1) {
+    if (this.currentImageIndex < this.currentProject.images.length - 1) {
       this.currentImageIndex++;
     } else {
       this.currentImageIndex = 0;

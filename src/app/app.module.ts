@@ -9,6 +9,7 @@ import { SkillsComponent } from './skills/skills.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
+import { RoadmapComponent } from './roadmap/roadmap.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {NgOptimizedImage} from "@angular/common";
     HomeComponent,
     SkillsComponent,
     ProjectsComponent,
-    ContactComponent
+    ContactComponent,
+    RoadmapComponent
   ],
     imports: [
         BrowserModule,

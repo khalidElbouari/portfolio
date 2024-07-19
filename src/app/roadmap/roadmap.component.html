@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <h2>My Journey</h2>
+      <div class="tabs">
+        <div class="tab" [class.active]="currentSection === 'experience'" (click)="showSection('experience')">Experience</div>
+        <div class="tab" [class.active]="currentSection === 'education'" (click)="showSection('education')">Education</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Roadmap Section -->
+  <div class="roadmap-container">
+    <div class="roadmap-line"></div>
+    <div class="roadmap">
+      <div *ngIf="currentSection === 'experience'">
+        <div *ngFor="let exp of experiences; let i = index"
+             class="roadmap-item"
+             [ngClass]="{'right': i % 2 === 0, 'left': i % 2 !== 0}">
+          <div class="roadmap-content">
+            <h4>{{ exp.title }}</h4>
+            <p>{{ exp.details }}</p>
+            <small>{{ exp.date }}</small>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="currentSection === 'education'">
+        <div *ngFor="let edu of education; let i = index"
+             class="roadmap-item"
+             [ngClass]="{'right': i % 2 === 0, 'left': i % 2 !== 0}">
+          <div class="roadmap-content">
+            <h4>{{ edu.title }}</h4>
+            <p>{{ edu.details }}</p>
+            <small>{{ edu.date }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

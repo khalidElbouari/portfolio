@@ -1,73 +1,38 @@
 <div class="container mt-5">
-  <!-- Spacer before the skills component -->
-  <div class="row mb-4">
-    <div class="col-12">
-      <h2 class="text-center">My Skills</h2>
-      <p class="text-center">Here are some of the skills I have acquired over my career:</p>
+  <div class="hero-section text-center text-white py-5 mb-4" style="background: linear-gradient(to right, #007bff, #00d2ff);">
+    <div class="container">
+      <h2 class="display-4 font-weight-bold gradient-text">My Skills</h2>
+      <p class="lead">Here are some of the skills I have acquired over my career:</p>
     </div>
   </div>
 
-  <div class="row">
-    <!-- Left Section: Title or Details -->
-    <div class="col-md-6 mb-4">
-      <h3>Technical Skills</h3>
-      <p>Proficient in various modern technologies and frameworks, with hands-on experience in web and desktop application development.</p>
-      <ul>
-        <li>Spring (JEE, Spring MVC, Spring Data, Spring Security)</li>
-        <li>Angular</li>
-        <li>MySQL</li>
-        <li>Laravel</li>
-      </ul>
+  <!-- Horizontal Bar for Categories -->
+  <div class="row mb-4">
+    <div class="col-12 text-center">
+      <div class="btn-group d-flex flex-wrap justify-content-center" role="group" aria-label="Skill Categories">
+        <button *ngFor="let category of skillCategories"
+                type="button"
+                class="btn btn-outline-primary"
+                [class.active]="selectedCategory === category"
+                (click)="setCategory(category)">
+          <i [class]="categoryIcons[category]"></i> {{ category | titlecase }}
+        </button>
+      </div>
     </div>
+  </div>
 
-    <!-- Right Section: Accordion Items -->
-    <div class="col-md-6">
-      <div class="accordion accordion-flush" id="skillsAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Spring
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#skillsAccordion">
-            <div class="accordion-body">
-              Extensive experience with Spring framework including Spring MVC, Spring Data, and Spring Security.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Angular
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#skillsAccordion">
-            <div class="accordion-body">
-              Proficient in building dynamic single-page applications using Angular.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              MySQL
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#skillsAccordion">
-            <div class="accordion-body">
-              Skilled in designing and managing MySQL databases.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              Laravel
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#skillsAccordion">
-            <div class="accordion-body">
-              Experienced in developing robust web applications using Laravel.
+  <!-- Details based on selected category -->
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <div *ngIf="selectedSkills">
+<!--
+        <h3>{{ selectedCategory | titlecase }} Skills</h3>
+-->
+        <div class="card-deck">
+          <div *ngFor="let skill of selectedSkills" class="card" [ngStyle]="{'border-color': getCardColor(skill)}">
+            <div class="card-body">
+              <h5 class="card-title"><i [class]="getIconClass(skill)"></i> {{ skill }}</h5>
+              <p class="card-text">Experience with {{ skill }} in various projects.</p>
             </div>
           </div>
         </div>

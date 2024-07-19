@@ -1,47 +1,230 @@
-/* Add margin-top to the container for spacing */
+/* Container and title styling */
 .container.mt-5 {
-  margin-top: 5rem; /* Adjust as needed */
+  margin-top: 5rem;
 }
 
-/* Adjust the styling for the title and description */
-h2.text-center {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+
+/* Button group styling */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
 }
 
-p.text-center {
+.btn-group .btn {
   font-size: 1.2rem;
-  margin-bottom: 3rem;
+  margin: 0.5rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Style the left section */
-.col-md-6.mb-4 {
-  padding-right: 2rem; /* Adjust padding for spacing */
+.btn-group .btn:hover,
+.btn-group .btn.active {
+  background-color: #007bff;
+  color: white;
 }
 
+.btn i {
+  margin-right: 0.5rem;
+}
+
+.btn-group .btn i {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.btn-group .btn:hover i {
+  transform: scale(1.2);
+  color: #ffffff;
+}
+
+/* Section and card deck styling */
 h3 {
   font-size: 2rem;
   margin-bottom: 1rem;
+  font-weight: bold;
+  color: #007bff;
 }
 
-ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
+.card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-/* Style the accordion */
-.accordion-button {
-  padding: 1rem;
-  font-size: 1.2rem;
+.card {
+  margin: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: none; /* Remove default border */
 }
 
-.accordion-body {
-  padding: 1rem;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: #007bff;
+}
+
+.card-title i {
+  margin-right: 0.5rem;
+}
+
+.card-text {
   font-size: 1rem;
-  line-height: 1.5;
+  color: #6c757d;
 }
 
-/* Additional spacing between sections */
-.row.mb-4 {
-  margin-bottom: 2rem; /* Adjust as needed */
+/* Media queries for small devices */
+@media (max-width: 576px) {
+  .btn-group .btn {
+    flex: 1 1 100%; /* Ensure buttons stack vertically */
+    margin-bottom: 0.5rem;
+  }
+
+  .card-deck {
+    flex-direction: column;
+  }
+
+  .card {
+    margin: 0.5rem 0;
+  }
+
+  h2.text-center, h3 {
+    font-size: 1.8rem;
+  }
+
+  p.text-center {
+    font-size: 1rem;
+  }
+
+  .card-title {
+    font-size: 1.2rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Icon color based on technology theme */
+.icon-angular {
+  color: #DD0031;
+}
+
+.icon-react {
+  color: #61DAFB;
+}
+
+.icon-vuejs {
+  color: #42b883;
+}
+
+.icon-html5 {
+  color: #E34F26;
+}
+
+.icon-css3-alt {
+  color: #1572B6;
+}
+
+.icon-js {
+  color: #F7DF1E;
+}
+
+.icon-spring {
+  color: #6DB33F;
+}
+
+.icon-node-js {
+  color: #8CC84B;
+}
+
+.icon-laravel {
+  color: #FF2D20;
+}
+
+.icon-express {
+  color: #000000;
+}
+
+.icon-django {
+  color: #092D43;
+}
+
+.icon-docker {
+  color: #2496ED;
+}
+
+.icon-kubernetes {
+  color: #326CE5;
+}
+
+.icon-ci-cd {
+  color: #1F77D4;
+}
+
+.icon-jenkins {
+  color: #D5B62F;
+}
+
+.icon-ansible {
+  color: #EE0000;
+}
+
+.icon-mysql {
+  color: #00758F;
+}
+
+.icon-mongodb {
+  color: #47A248;
+}
+
+.icon-postgresql {
+  color: #336791;
+}
+
+.icon-oracle {
+  color: #F80000;
+}
+
+.icon-firebase {
+  color: #FFCA28;
+}
+
+.icon-flutter {
+  color: #02569B;
+}
+
+.icon-react-native {
+  color: #61DAFB;
+}
+
+.icon-android {
+  color: #3DDC84;
+}
+
+.icon-ios {
+  color: #000000;
+}
+
+.icon-git {
+  color: #F05032;
+}
+
+.icon-webpack {
+  color: #8CC0DE;
+}
+
+.icon-babel {
+  color: #F9DC3E;
+}
+
+.icon-vscode {
+  color: #007ACC;
+}
+
+.icon-jira {
+  color: #0052CC;
 }
