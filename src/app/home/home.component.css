@@ -1,10 +1,10 @@
-#about {
+#home {
   background-color: #dee2e6;
-  padding:  100px 0 0 60px;
+  padding: 100px 0 0 60px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#about h1 {
+#home h1 {
   font-size: 2.0rem;
   margin-bottom: 1rem;
   color: #333;
@@ -38,17 +38,18 @@
   }
 }
 
-#about p {
+#home p {
   font-size: 1.2rem;
   line-height: 1.6;
   color: #555;
 }
+
 .profile-img {
-  max-width: 50%;
+  width:250px; /* Fixed width */
+  height: auto; /* Fixed height */
   border-radius: 20% 5% 60% 5%;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
-
 
 .profile-img:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
@@ -77,11 +78,11 @@
   color: #333333;
   transform: scale(1.03); /* Adjust the scale factor as per your preference */
 }
+
 .social-icons {
   display: flex;
   align-items: center;
   margin-left: 1.5rem;
-
 }
 
 .social-icons .icon {
@@ -94,13 +95,11 @@
   border-radius: 50%;
   margin-right: 10px;
   transition: all 0.3s ease;
-
 }
 
 .social-icons .icon i {
   color: #007bff;
   font-size: 1.5rem;
-
 }
 
 .social-icons .icon:hover {
@@ -112,38 +111,28 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px){
-  #about {
+@media (max-width: 768px) {
+  #home {
     padding: 1rem;
   }
 
-  #about h1 {
-    font-size: 2rem;
+  #home h1 {
+    font-size: 1.8rem;
   }
 
-  #about p {
+  #home p {
     font-size: 1rem;
   }
 
-  .typing-animation {
-    white-space: normal; /* Allow text wrapping */
-    overflow: hidden; /* Hide overflow text */
-    width: 0; /* Start with zero width */
-    animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
-  }
-
-  .profile-img {
-    width: 100%;
-    height: auto;
-    margin-top: 1rem;
-  }
   .get-in-touch-btn {
     margin-top: 1rem;
   }
+
   .social-icons {
     margin-top: 20px;
     justify-content: center;
   }
+
   .social-icons .icon {
     margin-right: 5px;
   }

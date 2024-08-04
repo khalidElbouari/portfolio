@@ -1,4 +1,4 @@
-import {Component, ElementRef, ViewChild} from '@angular/core';
+import {Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-projects',
@@ -24,8 +24,8 @@ export class ProjectsComponent {
       technologies: ['Angular', 'Spring Boot', 'Bootstrap']
     },
     {
-      title: 'gestion de toutune enligne',
-      description: 'A brief description of Project 2.',
+      title: 'Gestion de Toutune Enligne',
+      description: 'Cette plateforme en ligne facilite la collaboration en intégrant les services bancaires pour une gestion efficace des transactions. Elle permet aux utilisateurs de collaborer en ligne tout en bénéficiant d\'une gestion sécurisée et simplifiée des aspects financiers.',
       images: [
         { src: "assets/myprojects/dart/img.png", description: "Accueil" },
         { src: "assets/myprojects/dart/img_1.png", description: "Matériel" },
@@ -53,11 +53,11 @@ export class ProjectsComponent {
       ],
       debut: '15/01/2024',
       fin: '15/04/2024',
-      technologies: ['thyemleaf', 'ajax', 'Bootstrap', 'Spring boot']
+      technologies: ['Thymeleaf', 'AJAX', 'Bootstrap', 'Spring Boot']
     },
     {
-      title: 'School management system',
-      description: 'A brief description of Project 2.',
+      title: 'School Management System',
+      description: 'Le "School Management System" est une plateforme complète pour la gestion des cahiers de texte. Elle permet aux enseignants d\'ajouter, consulter, modifier et supprimer des séances de cours. Les inspecteurs et directeurs peuvent également accéder et inspecter les cahiers de texte. L\'application est conçue pour être fiable, facile à utiliser, et performante, avec une sécurité robuste pour protéger les données. Les fonctionnalités incluent la planification des séances, la gestion des matières, et un système de consultation intuitif.',
       images: [
         { src: "assets/myprojects/pfe-BTS/img.png", description: "Accueil" },
         { src: "assets/myprojects/pfe-BTS/img_1.png", description: "Matériel" },
@@ -68,13 +68,30 @@ export class ProjectsComponent {
       ],
       debut: '1/01/2022',
       fin: '30/06/2023',
-      technologies: ['JSP', 'JEE', 'Bootstrap', 'mySql', 'pdfMake']
+      technologies: ['JSP', 'JEE', 'Bootstrap', 'MySQL', 'pdfMake']
     }
   ];
   currentPage = 0;
   itemsPerPage = 2;
   currentProject: any = null;
   currentImageIndex = 0;
+
+  ngOnInit() {
+    this.updateItemsPerPage(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.updateItemsPerPage(event.target.innerWidth);
+  }
+
+  updateItemsPerPage(width: number) {
+    if (width < 768) { // Adjust this breakpoint as needed
+      this.itemsPerPage = 1;
+    } else {
+      this.itemsPerPage = 2;
+    }
+  }
 
   get paginatedProjects() {
     const start = this.currentPage * this.itemsPerPage;
@@ -110,7 +127,6 @@ export class ProjectsComponent {
       document.body.classList.remove('modal-open');
     }
   }
-
 
   prevImage() {
     if (this.currentImageIndex > 0) {
