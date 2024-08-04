@@ -6,14 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./skills.component.css']
 })
 export class SkillsComponent {
-  skillCategories: string[] = ['frontend', 'backend', 'devops', 'database', 'mobile', 'tools'];
+  skillCategories: string[] = ['frontend', 'backend', 'devops', 'database'/*, 'mobile'*/, 'tools'];
   skills: { [key: string]: string[] } = {
-    'frontend': ['Angular', 'React', 'Vue.js', 'HTML', 'CSS', 'JavaScript'],
-    'backend': ['Spring (JEE, Spring MVC, Spring Data, Spring Security)', 'Node.js', 'Laravel', 'Express.js', 'Django'],
-    'devops': ['Docker', 'Kubernetes', 'CI/CD', 'Jenkins', 'Ansible'],
-    'database': ['MySQL', 'MongoDB', 'PostgreSQL', 'Oracle', 'Firebase'],
+    'frontend': ['Angular'/*, 'React', 'Vue.js'*/, 'HTML', 'CSS', 'JavaScript'],
+    'backend': ['Spring (JEE, Spring MVC, Spring Data, Spring Security)', /*'Node.js', 'Express.js', 'Django',*/ 'Laravel'],
+    'devops': ['Docker', 'Kubernetes', 'CI/CD', 'Jenkins'/*, 'Ansible'*/],
+    'database': ['MySQL', /*'MongoDB', 'PostgreSQL','Firebase', */'Oracle'],
+/*
     'mobile': ['Flutter', 'React Native', 'Android', 'iOS'],
-    'tools': ['Git', 'Webpack', 'Babel', 'VS Code', 'JIRA']
+*/
+      'tools': ['Git',/* 'Webpack', 'Babel', 'VS Code',*/ 'JIRA']
   };
   selectedCategory: string = this.skillCategories[0];
   selectedSkills: string[] = this.skills[this.selectedCategory];

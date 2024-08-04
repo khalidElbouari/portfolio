@@ -4,13 +4,17 @@
   top: 0;
   z-index: 1000; /* Adjust as needed */
   background-color: #dee2e6; /* Background color of the navbar */
-  padding: 15px 30px; /* Increased padding around the navbar */
+  padding: 10px 30px; /* Adjusted padding */
   border-bottom: 1px solid #dee2e6; /* Border bottom for separation */
   display: flex; /* Use flexbox for layout */
   justify-content: space-between; /* Space between elements */
   align-items: center; /* Align items vertically */
 }
+.myprofile{
+  width: 40px;
+  border-radius: 50%;
 
+}
 .navbar-brand {
   font-size: 1.5rem; /* Larger font size for brand */
   color: #007bff; /* Blue color for brand */

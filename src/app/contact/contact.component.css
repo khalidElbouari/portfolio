@@ -2,9 +2,8 @@
 #contact {
   position: relative;
   display: flex;
-  justify-content: flex-end;
   padding: 2rem 0;
-  background: #f7f9fc;
+  flex-wrap: wrap;
 }
 
 .contact-wrapper {
@@ -12,21 +11,15 @@
   align-items: center;
   background: #fff;
   padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  max-width: 100%;
   width: 100%;
-}
-
-.contact-wrapper:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
 }
 
 .contact-image {
-  flex: 0 0 150px; /* Adjust the width of the SVG image container */
-  margin-right: 1rem;
+  flex: 1 1 100%; /* Full width on small screens */
+  max-width: 400px;
+  margin: 0 auto 2rem; /* Centered on small screens */
+  text-align: center;
 }
 
 .contact-image img {
@@ -35,7 +28,8 @@
 }
 
 .contact-form-wrapper {
-  flex: 1;
+  flex: 1 1 100%; /* Full width on small screens */
+  padding: 0 1rem;
 }
 
 .section-title {
@@ -83,4 +77,22 @@
 .alert {
   margin-top: 1rem;
   border-radius: 4px;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 768px) {
+  .contact-wrapper {
+    flex-direction: row;
+  }
+  .contact-image {
+    flex: 0 0 400px;
+    margin-right: 1rem;
+    margin-bottom: 0; /* Remove bottom margin on larger screens */
+    text-align: left; /* Align left on larger screens */
+  }
+  .contact-form-wrapper {
+    flex: 1;
+    max-width: 600px; /* Limit the width of the form on larger screens */
+    margin: 0 auto; /* Center the form horizontally */
+  }
 }

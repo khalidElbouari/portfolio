@@ -19,9 +19,41 @@ export class ProjectsComponent {
         { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
         { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
       ],
-      debut: '15/07/2023',
-      fin: '15/07/2023',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap']
+      debut: '2/04/2024',
+      fin: '23/06/2024',
+      technologies: ['Angular', 'Spring Boot', 'Bootstrap']
+    },
+    {
+      title: 'gestion de toutune enligne',
+      description: 'A brief description of Project 2.',
+      images: [
+        { src: "/assets/myprojects/dart/img.png", description: "Accueil" },
+        { src: "/assets/myprojects/dart/img_1.png", description: "Matériel" },
+        { src: "/assets/myprojects/dart/img_2.png", description: "Services" },
+        { src: "/assets/myprojects/dart/img_3.png", description: "Page 4" },
+        { src: "/assets/myprojects/dart/img_4.png", description: "Page 5" },
+        { src: "/assets/myprojects/dart/img_5.png", description: "Page 6" },
+        { src: "/assets/myprojects/dart/img_6.png", description: "Page 7" },
+        { src: "/assets/myprojects/dart/img_7.png", description: "Page 8" },
+        { src: "/assets/myprojects/dart/img_8.png", description: "Page 9" },
+        { src: "/assets/myprojects/dart/img_9.png", description: "Page 10" },
+        { src: "/assets/myprojects/dart/img_10.png", description: "Page 11" },
+        { src: "/assets/myprojects/dart/img_11.png", description: "Page 12" },
+        { src: "/assets/myprojects/dart/img_12.png", description: "Page 13" },
+        { src: "/assets/myprojects/dart/img_13.png", description: "Page 14" },
+        { src: "/assets/myprojects/dart/img_14.png", description: "Page 15" },
+        { src: "/assets/myprojects/dart/img_15.png", description: "Page 16" },
+        { src: "/assets/myprojects/dart/img_16.png", description: "Page 17" },
+        { src: "/assets/myprojects/dart/img_17.png", description: "Page 18" },
+        { src: "/assets/myprojects/dart/img_18.png", description: "Page 18" },
+        { src: "/assets/myprojects/dart/img_19.png", description: "Page 18" },
+        { src: "/assets/myprojects/dart/img_20.png", description: "Page 18" },
+        { src: "/assets/myprojects/dart/img_21.png", description: "Page 18" },
+        { src: "/assets/myprojects/dart/img_22.png", description: "Page 18" },
+      ],
+      debut: '15/01/2024',
+      fin: '15/04/2024',
+      technologies: ['thyemleaf', 'ajax', 'Bootstrap','Spring boot']
     },
     {
       title: 'School management system',
@@ -34,46 +66,9 @@ export class ProjectsComponent {
         { src: "/assets/myprojects/pfe-BTS/img_4.png", description: "Services" },
         { src: "/assets/myprojects/pfe-BTS/img_5.png", description: "Services" },
       ],
-      debut: '15/07/2023',
-      fin: '15/07/2023',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap']
-    },
-    {
-      title: 'Project 3',
-      description: 'A brief description of Project 2.',
-      images: [
-        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
-        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
-        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
-      ],
-      debut: '15/07/2023',
-      fin: '15/07/2023',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap']
-
-    },
-    {
-      title: 'Project 4',
-      description: 'A brief description of Project 2.',
-      images: [
-        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
-        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
-        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
-      ],
-      debut: '15/07/2023',
-      fin: '15/07/2023',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap']
-    },
-    {
-      title: 'Project 5',
-      description: 'A brief description of Project 2.',
-      images: [
-        { src: "/assets/myprojects/labocontrol-Aceuil.png", description: "Accueil" },
-        { src: "/assets/myprojects/labocontrol-materiel.png", description: "Matériel" },
-        { src: "/assets/myprojects/labocontrol-services.png", description: "Services" }
-      ],
-      debut: '15/07/2023',
-      fin: '15/07/2023',
-      technologies: ['Angular', 'TypeScript', 'Bootstrap']
+      debut: '1/01/2022',
+      fin: '30/06/2023',
+      technologies: ['JSP', 'JEE', 'Bootstrap','mySql','pdfMake']
     },
 
   ];
@@ -105,6 +100,7 @@ export class ProjectsComponent {
     const modal = document.getElementById('projectModal');
     if (modal) {
       modal.classList.add('show');
+      document.body.classList.add('modal-open');
     }
   }
 
@@ -112,8 +108,10 @@ export class ProjectsComponent {
     const modal = document.getElementById('projectModal');
     if (modal) {
       modal.classList.remove('show');
+      document.body.classList.remove('modal-open');
     }
   }
+
 
   prevImage() {
     if (this.currentImageIndex > 0) {
