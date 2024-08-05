@@ -3,20 +3,20 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-roadmap',
   templateUrl: './roadmap.component.html',
-  styleUrl: './roadmap.component.css'
+  styleUrls: ['./roadmap.component.css']
 })
 export class RoadmapComponent {
   experiences = [
-    { title: 'Web Application for Mail Management', details: 'Developed a web application to manage mails.', date: 'Jan 2022 - Mar 2022', position: 'left' },
-    { title: 'Bug Fixing for VB.NET Application', details: 'Analyzed and resolved bugs for a VB.NET desktop application.', date: 'Apr 2022 - Jun 2022', position: 'right' },
-    { title: 'Maintaining and Bug Fixing for VB.NET Application', details: 'Analyzed and resolved bugs for a VB.NET desktop application.', date: 'Apr 2023 - Jun 2023', position: 'right' },
+    { title: 'Web Application for Mail Management', details: 'Developed a web application to manage mails.', enterprise: 'Ibn tofail', date: 'Kénitra : 04-07-2022 to 29-07-2022' },
+    { title: 'Bug Fixing for VB.NET Application', details: 'Analysis and resolution of bugs in the VB.NET desktop application for Copref.\n' + 'Development of the website for payment management', enterprise: 'Copref', date: 'Kénitra : 15-05-2023 to 15-06-2023' },
+    { title: 'Developer', details: 'Development of a web application for the integrated marketing of services and products.', enterprise: 'LaboControl', date: 'Fes : 01-04-2024 to 24-06-2024' },
     // Add more experience entries here
   ];
 
   education = [
-    { title: 'Bachelor\'s Degree in Computer Engineering and Digital Governance', details: 'Higher School of Technology (EST).', date: '2024', position: 'left' },
-    { title: 'BTS in Information Systems Development', details: 'Advanced Technician Certificate (BTS)', date: '2023', position: 'right' },
-    { title: 'High School Diploma in Physics', details: 'Almasira alkhadra High School', date: '2021', position: 'right' },
+    { title: 'Bachelor\'s Degree in Computer Engineering and Digital Governance', details: 'Higher School of Technology (EST).', date: '2024' },
+    { title: 'BTS in Information Systems Development', details: 'Advanced Technician Certificate (BTS)', date: '2023' },
+    { title: 'High School Diploma in Physics', details: 'Almasira alkhadra High School', date: '2021' },
     // Add more education entries here
   ];
 
@@ -25,5 +25,4 @@ export class RoadmapComponent {
   showSection(section: string) {
     this.currentSection = section;
   }
-
 }

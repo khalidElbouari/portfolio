@@ -27,6 +27,12 @@ h2 {
   border-radius: 0.3rem;
   background-color: #f8f9fa;
   color: #007bff;
+  display: flex;
+  align-items: center;
+}
+
+.tab i {
+  margin-right: 0.5rem;
 }
 
 .tab.active {
@@ -66,16 +72,17 @@ h2 {
   padding-left: 2rem; /* Adjust padding to ensure space between item and line */
   display: flex;
   justify-content: center;
+  min-height: 150px; /* Set a minimum height for the items */
 }
 
 .roadmap-item.left {
   margin-left: 0;
-  text-align: right;
+  text-align: left; /* Ensure text is left-aligned */
 }
 
 .roadmap-item.right {
   margin-left: auto;
-  text-align: left;
+  text-align: left; /* Ensure text is left-aligned */
 }
 
 .roadmap-item:before {
@@ -101,6 +108,10 @@ h2 {
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Ensure the items take up full height */
 }
 
 .roadmap-content h4 {
@@ -118,37 +129,39 @@ h2 {
   color: #999;
 }
 
-/* Hover effect for line showing year */
-.roadmap-line:hover::after {
-  content: attr(data-year);
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  background: #007bff;
-  color: white;
-  border-radius: 0.3rem;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  opacity: 1;
-  visibility: visible;
-  transition: opacity 0.3s, visibility 0.3s;
-}
+/* Responsive styling */
+@media (max-width: 768px) {
+  .roadmap-line {
+    left: 0; /* Move the line to the left */
+    transform: translateX(0);
+  }
 
-.roadmap-line::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 100%;
-  margin-left: 0.5rem;
-  padding: 0.2rem 0.5rem;
-  background: #007bff;
-  color: white;
-  border-radius: 0.3rem;
-  font-size: 0.9rem;
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
+  .roadmap-item {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    min-height: 200px; /* Ensure all items have a fixed height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .roadmap-item:before,
+  .roadmap-item.right:before {
+    left: -9px;
+    right: auto;
+  }
+
+  .roadmap-item.right,
+  .roadmap-item.left {
+    text-align: left;
+  }
+
+  .roadmap-content {
+    height: 100%; /* Set height to fill parent */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px; /* Set a fixed height for the items */
+  }
 }

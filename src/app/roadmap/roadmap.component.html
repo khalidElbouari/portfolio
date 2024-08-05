@@ -3,8 +3,12 @@
     <div class="col-12 text-center">
       <h2>My Journey</h2>
       <div class="tabs">
-        <div class="tab" [class.active]="currentSection === 'experience'" (click)="showSection('experience')">Experience</div>
-        <div class="tab" [class.active]="currentSection === 'education'" (click)="showSection('education')">Education</div>
+        <div class="tab" [class.active]="currentSection === 'experience'" (click)="showSection('experience')">
+          <i class="fas fa-briefcase"></i> Experience
+        </div>
+        <div class="tab" [class.active]="currentSection === 'education'" (click)="showSection('education')">
+          <i class="fas fa-graduation-cap"></i> Education
+        </div>
       </div>
     </div>
   </div>
@@ -20,6 +24,7 @@
           <div class="roadmap-content">
             <h4>{{ exp.title }}</h4>
             <p>{{ exp.details }}</p>
+            <small>{{ exp.enterprise }}</small>
             <small>{{ exp.date }}</small>
           </div>
         </div>

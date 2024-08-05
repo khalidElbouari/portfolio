@@ -10,8 +10,8 @@ import { takeUntil } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
   sentences: string[] = [
     "I'm a software developer",
-    "Transforming ideas into reality",
-    "Empowering businesses with technology"
+   /* "Transforming ideas into reality",
+    "Empowering businesses with technology"*/
   ];
   currentSentenceIndex: number = 0;  // Index to track current sentence
   typingText: string = "";  // Text to be typed
