@@ -10,7 +10,7 @@ export class HeaderComponent {
   constructor(private translationService: TranslationService) {}
 
   translatePage(targetLang: string) {
-    const elementsToTranslate = document.querySelectorAll('[data-translate]');
+   /* const elementsToTranslate = document.querySelectorAll('[data-translate]');
 
     elementsToTranslate.forEach(element => {
       const htmlElement = element as HTMLElement;
@@ -24,6 +24,6 @@ export class HeaderComponent {
           console.error('Error translating text:', error);
         }
       );
-    });
+    });*/
   }
 }

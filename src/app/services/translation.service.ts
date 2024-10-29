@@ -7,7 +7,7 @@ import { catchError, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class TranslationService {
-  private apiUrl = 'https://libretranslate.com/translate';
+  /*private apiUrl = 'https://libretranslate.com/translate';
   private requestQueue: Observable<any> = of(null);
   private requestRateLimit = 100; // Maximum requests per hour
   private requestInterval = 3600000 / this.requestRateLimit; // Interval between allowed requests
@@ -34,5 +34,5 @@ export class TranslationService {
       })
     );
 
-  }
+  }*/
 }
