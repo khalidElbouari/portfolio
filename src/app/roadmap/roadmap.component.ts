@@ -14,6 +14,7 @@ export class RoadmapComponent {
   ];
 
   education = [
+    { title: 'Master Qualité du Logiciel (MQL)', details: 'Faculté des Sciences Dhar El Mahraz', date: 'En coure' },
     { title: 'Bachelor\'s Degree in Computer Engineering and Digital Governance', details: 'Higher School of Technology (EST).', date: '2024' },
     { title: 'BTS in Information Systems Development', details: 'Advanced Technician Certificate (BTS)', date: '2023' },
     { title: 'High School Diploma in Physics', details: 'Almasira alkhadra High School', date: '2021' },
