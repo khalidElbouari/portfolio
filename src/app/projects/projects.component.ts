@@ -21,7 +21,7 @@ export class ProjectsComponent {
       ],
       debut: '2/04/2024',
       fin: '23/06/2024',
-      technologies: ['Angular', 'Spring Boot', 'Bootstrap']
+      technologies: ['Angular', 'Spring Boot', 'MySQL']
     },
     {
       title: 'Gestion de Toutune Enligne',
@@ -53,7 +53,7 @@ export class ProjectsComponent {
       ],
       debut: '15/01/2024',
       fin: '15/04/2024',
-      technologies: ['Thymeleaf', 'AJAX', 'Bootstrap', 'Spring Boot']
+      technologies: ['Thymeleaf', 'MySQL', 'Spring Boot']
     },
     {
       title: 'School Management System',
@@ -68,7 +68,7 @@ export class ProjectsComponent {
       ],
       debut: '1/01/2022',
       fin: '30/06/2023',
-      technologies: ['JSP', 'JEE', 'Bootstrap', 'MySQL', 'pdfMake']
+      technologies: [ 'JEE', 'JSP', 'MySQL', 'pdfMake']
     }
   ];
   currentPage = 0;

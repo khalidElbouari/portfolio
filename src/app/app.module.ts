@@ -13,6 +13,7 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ProjectDetailComponent } from './project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {HttpClientModule} from "@angular/common/http";
     ProjectsComponent,
     ContactComponent,
     RoadmapComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

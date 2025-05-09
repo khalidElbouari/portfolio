@@ -9,9 +9,9 @@ export class SkillsComponent {
   skillCategories: string[] = ['frontend', 'backend', 'devops', 'database'/*, 'mobile'*/, 'tools'];
   skills: { [key: string]: string[] } = {
     'frontend': ['Angular'/*, 'React', 'Vue.js'*/, 'HTML', 'CSS', 'JavaScript'],
-    'backend': ['Spring (JEE, Spring MVC, Spring Data, Spring Security)', /*'Node.js', 'Express.js', 'Django',*/ 'Laravel'],
-    'devops': ['Docker', 'Kubernetes', 'CI/CD', 'Jenkins'/*, 'Ansible'*/],
-    'database': ['MySQL', /*'MongoDB', 'PostgreSQL','Firebase', */'Oracle'],
+    'backend': ['java , java EE , Spring Boot', 'Node.js', ],
+    'devops': ['Docker'/* 'Kubernetes', 'CI/CD', 'Jenkins', 'Ansible'*/],
+    'database': ['MySQL', 'MongoDB', /*'PostgreSQL',*/ 'Oracle','SQL Server'],
 /*
     'mobile': ['Flutter', 'React Native', 'Android', 'iOS'],
 */
@@ -36,7 +36,7 @@ export class SkillsComponent {
     'HTML': 'fab fa-html5 icon-html5',
     'CSS': 'fab fa-css3-alt icon-css3-alt',
     'JavaScript': 'fab fa-js icon-js',
-    'Spring (JEE, Spring MVC, Spring Data, Spring Security)': 'fas fa-leaf icon-spring',
+    'java , java EE , Spring Boot': 'fas fa-leaf icon-spring',
     'Node.js': 'fab fa-node-js icon-node-js',
     'Laravel': 'fab fa-laravel icon-laravel',
     'Express.js': 'fas fa-code icon-express',
@@ -50,6 +50,7 @@ export class SkillsComponent {
     'MongoDB': 'fas fa-leaf icon-mongodb',
     'PostgreSQL': 'fas fa-database icon-postgresql',
     'Oracle': 'fas fa-database icon-oracle',
+    'SQL Server':'fas fa-database icon-sql-server',
     'Firebase': 'fas fa-fire icon-firebase',
     'Flutter': 'fas fa-mobile-alt icon-flutter',
     'React Native': 'fab fa-react icon-react-native',
@@ -59,7 +60,12 @@ export class SkillsComponent {
     'Webpack': 'fas fa-cubes icon-webpack',
     'Babel': 'fas fa-code icon-babel',
     'VS Code': 'fas fa-code icon-vscode',
-    'JIRA': 'fab fa-jira icon-jira'
+    'JIRA': 'fab fa-jira icon-jira',
+
+
+
+
+
   };
 
   skillColors: { [key: string]: string } = {
@@ -69,7 +75,7 @@ export class SkillsComponent {
     'HTML': '#E34F26',
     'CSS': '#1572B6',
     'JavaScript': '#F7DF1E',
-    'Spring (JEE, Spring MVC, Spring Data, Spring Security)': '#6DB33F',
+    'java , java EE , Spring Boot': '#6DB33F',
     'Node.js': '#8CC84B',
     'Laravel': '#FF2D20',
     'Express.js': '#000000',

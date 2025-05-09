@@ -45,7 +45,7 @@
 }
 
 .profile-img {
-  width:250px; /* Fixed width */
+  width:150px; /* Fixed width */
   height: auto; /* Fixed height */
   border-radius: 20% 5% 60% 5%;
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;

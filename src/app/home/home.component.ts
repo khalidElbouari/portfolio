@@ -10,8 +10,8 @@ import { takeUntil } from 'rxjs/operators';
 export class HomeComponent implements OnInit, OnDestroy {
   sentences: string[] = [
     "I'm a software developer",
-   /* "Transforming ideas into reality",
-    "Empowering businesses with technology"*/
+    "Transforming ideas into reality",
+    "I speak JSON fluently"
   ];
   currentSentenceIndex: number = 0;  // Index to track current sentence
   typingText: string = "";  // Text to be typed
@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();  // Subject to unsubscribe from observables
   private typingIntervalId: any;  // Interval ID for sentence switching
   private animateTypingIntervalId: any;  // Interval ID for typing animation
+  private isAnimating: boolean = false;  // Flag to track animation state
 
   constructor() { }
 
@@ -31,9 +32,21 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.destroy$.next();  // Unsubscribe from observables
     this.destroy$.complete();
-    clearInterval(this.typingIntervalId);  // Clear the typing interval
-    clearInterval(this.animateTypingIntervalId);  // Clear the animation interval
+    this.clearAllIntervals();  // Clear all intervals
     document.removeEventListener('visibilitychange', this.handleVisibilityChange);  // Remove event listener
+  }
+
+  // Helper method to clear all intervals
+  private clearAllIntervals(): void {
+    if (this.typingIntervalId) {
+      clearInterval(this.typingIntervalId);
+      this.typingIntervalId = null;
+    }
+    if (this.animateTypingIntervalId) {
+      clearInterval(this.animateTypingIntervalId);
+      this.animateTypingIntervalId = null;
+    }
+    this.isAnimating = false;
   }
 
   setupTypingInterval(): void {
@@ -49,15 +62,19 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   updateTypingText(): void {
-    const sentence = this.sentences[this.currentSentenceIndex];
-    this.typingText = sentence;  // Set the current sentence to be typed
-    this.currentSentenceIndex = (this.currentSentenceIndex + 1) % this.sentences.length;  // Move to the next sentence index
-    this.animateTyping();  // Start typing animation
+    // Only start a new animation if one isn't already running
+    if (!this.isAnimating) {
+      const sentence = this.sentences[this.currentSentenceIndex];
+      this.typingText = sentence;  // Set the current sentence to be typed
+      this.currentSentenceIndex = (this.currentSentenceIndex + 1) % this.sentences.length;  // Move to the next sentence index
+      this.animateTyping();  // Start typing animation
+    }
   }
 
   animateTyping(): void {
     let index = 0;
     this.displayText = "";  // Clear previous text
+    this.isAnimating = true;  // Set animation flag
 
     if (this.animateTypingIntervalId) {
       clearInterval(this.animateTypingIntervalId);  // Clear any existing animation interval
@@ -69,17 +86,21 @@ export class HomeComponent implements OnInit, OnDestroy {
         index++;
       } else {
         clearInterval(this.animateTypingIntervalId);  // Clear interval when typing is complete
+        this.animateTypingIntervalId = null;
+        this.isAnimating = false;  // Reset animation flag
       }
     }, 100);  // Adjust typing speed as needed (milliseconds)
   }
 
   handleVisibilityChange = (): void => {
     if (document.hidden) {
-      clearInterval(this.typingIntervalId);  // Clear typing interval when page is hidden
-      clearInterval(this.animateTypingIntervalId);  // Clear animation interval when page is hidden
+      this.clearAllIntervals();  // Clear all intervals when page is hidden
     } else {
-      this.setupTypingInterval();  // Restart typing interval when page becomes visible
-      this.updateTypingText();  // Ensure text is updated when page becomes visible
+      // When page is visible again, only start fresh
+      this.setupTypingInterval();  // Set up the sentence cycling interval
+      if (!this.isAnimating) {     // Only start animation if one isn't already running
+        this.updateTypingText();   // Start a fresh animation
+      }
     }
   }
 }

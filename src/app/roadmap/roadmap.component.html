@@ -25,8 +25,13 @@
             <h4>{{ exp.title }}</h4>
             <p>{{ exp.details }}</p>
             <small>{{ exp.enterprise }}</small>
-            <small>{{ exp.date }}</small>
+            <small class="d-flex justify-content-between">
+              <span>{{ exp.date }}</span>
+              <button class="bi bi-info-circle"> details</button>
+            </small>
+
           </div>
+
         </div>
       </div>
 
@@ -37,7 +42,12 @@
           <div class="roadmap-content">
             <h4>{{ edu.title }}</h4>
             <p>{{ edu.details }}</p>
-            <small>{{ edu.date }}</small>
+            <small class="d-flex justify-content-between">
+              <span>{{ edu.date }}</span> <!-- or {{ edu.date }} for education section -->
+              <button class="bi bi-info-circle"> details</button>
+            </small>
+
+
           </div>
         </div>
       </div>

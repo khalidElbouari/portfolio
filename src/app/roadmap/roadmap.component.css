@@ -165,3 +165,28 @@ h2 {
     min-height: 200px; /* Set a fixed height for the items */
   }
 }
+
+
+
+/* Ensure the button is aligned to the right */
+small.d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically align the text and button */
+}
+
+/* Style for the button */
+button.bi-info-circle {
+  background: none; /* No background */
+  color: #007bff; /* Blue color for the icon */
+  border: none; /* Remove border */
+  font-size: 1rem; /* Size of the icon */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 0.3rem 0.5rem; /* Padding around the button */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover effect */
+button.bi-info-circle:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
