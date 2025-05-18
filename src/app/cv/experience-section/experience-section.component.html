@@ -1,0 +1,10 @@
+<div class="experience-section">
+  <h2>Expériences</h2>
+  <ul>
+    <li *ngFor="let exp of experiences">
+      <h3>{{ exp.title }} ({{ exp.type }})</h3>
+      <p><strong>{{ exp.organisation }}</strong> — {{ exp.year }} — {{ exp.duration }}</p>
+      <p><em>Technologies :</em> {{ exp.technologies.join(', ') }}</p>
+    </li>
+  </ul>
+</div>

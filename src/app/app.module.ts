@@ -14,6 +14,15 @@ import {ReactiveFormsModule} from "@angular/forms";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import {CvComponent} from "./cv/cv/cv.component";
+import {EducationSectionComponent} from "./cv/education-section/education-section.component";
+import {ExperienceSectionComponent} from "./cv/experience-section/experience-section.component";
+import {InfoSectionComponent} from "./cv/info-section/info-section.component";
+import {ProfileSectionComponent} from "./cv/profile-section/profile-section.component";
+import {TechnologySkillsComponent} from "./cv/technology-skills/technology-skills.component";
+
+
+
 
 @NgModule({
   declarations: [
@@ -25,7 +34,14 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     ContactComponent,
     RoadmapComponent,
     PageNotFoundComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    CvComponent,
+    EducationSectionComponent,
+    ExperienceSectionComponent,
+    InfoSectionComponent,
+    ProfileSectionComponent,
+    TechnologySkillsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -35,6 +51,9 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
     HttpClientModule
   ],
   providers: [],
+  exports: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

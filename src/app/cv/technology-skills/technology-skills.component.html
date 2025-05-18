@@ -1,0 +1,9 @@
+<div class="technology-skills">
+  <h2>Compétences techniques</h2>
+  <div *ngFor="let tech of skills" class="skill-group">
+    <h3>{{ tech.skill }}</h3>
+    <ul>
+      <li *ngFor="let detail of tech.details">{{ detail }}</li>
+    </ul>
+  </div>
+</div>

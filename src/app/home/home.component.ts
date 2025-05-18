@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { interval, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -13,6 +14,11 @@ export class HomeComponent implements OnInit, OnDestroy {
     "Transforming ideas into reality",
     "I speak JSON fluently"
   ];
+
+  constructor(private route: ActivatedRoute) { }  // <-- injecter ActivatedRoute
+
+
+
   currentSentenceIndex: number = 0;  // Index to track current sentence
   typingText: string = "";  // Text to be typed
   displayText: string = "";  // For displaying the text gradually
@@ -21,12 +27,23 @@ export class HomeComponent implements OnInit, OnDestroy {
   private animateTypingIntervalId: any;  // Interval ID for typing animation
   private isAnimating: boolean = false;  // Flag to track animation state
 
-  constructor() { }
 
   ngOnInit(): void {
-    this.updateTypingText();  // Call initially to start the first sentence
-    this.setupTypingInterval();  // Setup interval to change sentences periodically
-    document.addEventListener('visibilitychange', this.handleVisibilityChange);  // Add event listener for visibility change
+    this.updateTypingText();
+    this.setupTypingInterval();
+    document.addEventListener('visibilitychange', this.handleVisibilityChange);
+
+    // Gestion du fragment pour scroll automatique
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        const el = document.getElementById(fragment);
+        if (el) {
+          setTimeout(() => {
+            el.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        }
+      }
+    });
   }
 
   ngOnDestroy(): void {

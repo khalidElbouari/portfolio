@@ -1,0 +1,27 @@
+<header class="profile-header">
+  <img
+    class="profile-picture"
+    [src]="profile.photo"
+    [alt]="'Photo de profil de ' + profile.firstName + ' ' + profile.lastName"
+  />
+
+  <div class="profile-info">
+    <div class="name-status">
+      <div class="name">{{ profile.lastName.toUpperCase() }} {{ profile.firstName }}</div>
+      <div class="status">{{ profile.professionalSummary || 'Titre non défini' }}</div>
+    </div>
+
+    <div class="contact-info">
+      <div class="line">
+        <span class="label">Téléphone :</span>
+        <span class="value">{{ profile.phone }}</span>
+        <span class="label">Email :</span>
+        <span class="value">{{ profile.email }}</span>
+      </div>
+      <div class="line">
+        <span class="label">Adresse :</span>
+        <span class="value">{{ profile.address }}</span>
+      </div>
+    </div>
+  </div>
+</header>
