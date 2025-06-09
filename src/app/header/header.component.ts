@@ -7,23 +7,15 @@ import { TranslationService } from '../services/translation.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  showChat = false;
+
   constructor(private translationService: TranslationService) {}
 
+  toggleChat() {
+    this.showChat = !this.showChat;
+  }
+
   translatePage(targetLang: string) {
-   /* const elementsToTranslate = document.querySelectorAll('[data-translate]');
-
-    elementsToTranslate.forEach(element => {
-      const htmlElement = element as HTMLElement;
-      const text = htmlElement.innerText;
-
-      this.translationService.translate(text, targetLang).subscribe(
-        (response: any) => {
-          htmlElement.innerText = response.translatedText;
-        },
-        (error) => {
-          console.error('Error translating text:', error);
-        }
-      );
-    });*/
+    // ta méthode de traduction ici
   }
 }

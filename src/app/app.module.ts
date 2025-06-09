@@ -10,7 +10,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import {NgOptimizedImage} from "@angular/common";
 import { RoadmapComponent } from './roadmap/roadmap.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
@@ -20,6 +20,8 @@ import {ExperienceSectionComponent} from "./cv/experience-section/experience-sec
 import {InfoSectionComponent} from "./cv/info-section/info-section.component";
 import {ProfileSectionComponent} from "./cv/profile-section/profile-section.component";
 import {TechnologySkillsComponent} from "./cv/technology-skills/technology-skills.component";
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { MarkdownModule } from 'ngx-markdown';
 
 
 
@@ -40,7 +42,8 @@ import {TechnologySkillsComponent} from "./cv/technology-skills/technology-skill
     ExperienceSectionComponent,
     InfoSectionComponent,
     ProfileSectionComponent,
-    TechnologySkillsComponent
+    TechnologySkillsComponent,
+    ChatbotComponent
 
   ],
   imports: [
@@ -48,7 +51,10 @@ import {TechnologySkillsComponent} from "./cv/technology-skills/technology-skill
     AppRoutingModule,
     NgOptimizedImage,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MarkdownModule.forRoot(),
+
   ],
   providers: [],
   exports: [
